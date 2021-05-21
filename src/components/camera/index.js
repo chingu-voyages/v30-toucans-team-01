@@ -10,7 +10,7 @@ const videoConstraints = {
     height: 720,
     facingMode: 'user'
 }
-function WebcamComponent() {
+function WebcamComponent(addImage) {
     const [isImage, setImage] = useState(false)
     const [isCamera, setCamera] = useState(false)
     const webcamRef = React.useRef();
