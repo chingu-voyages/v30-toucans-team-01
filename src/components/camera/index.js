@@ -20,7 +20,7 @@ function WebcamComponent(addImage) {
     return (
         <div className="main-container">
             <Webcam
-                className={`sample-frame`}
+                className="WebcamComponent__camera"
                 audio={false}
                 height={720}
                 ref={webcamRef}
