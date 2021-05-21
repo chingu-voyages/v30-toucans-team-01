@@ -1,4 +1,15 @@
-.footer {
+.Footer {
     display: grid;
     place-items: center center;
+}
+
+.Footer__link {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+}
+
+.Footer__logo {
+    margin-left: 1.2rem;
+    width: 6rem;
 }
