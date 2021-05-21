@@ -28,7 +28,6 @@ function WebcamComponent(addImage) {
                 width={1280}
                 videoConstraints={videoConstraints}
             />
-            
         </div>
     )
 }
