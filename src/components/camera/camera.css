@@ -1,4 +1,4 @@
-.main-container {
+.WebcamComponent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,27 +6,8 @@
     height: 80vh;
 }
 
-.sample-frame {
+.WebcamComponent__camera {
     background: #3d3d3d;
     width: 760px;
     height: 400px;
-}
-
-
-.sample-btn {
-   position: relative;
-   color: #3d3d3d;
-   top: -60px;
-   transition: color 500ms;
-}
-
-.sample-frame:hover + .sample-btn{
-    background: transparent;
-    color: #f3f3f3;
-    opacity: 0.8;
-}
-
-.sample-btn:hover {
-    opacity: 0.8;
-    color: #f3f3f3;
 }
