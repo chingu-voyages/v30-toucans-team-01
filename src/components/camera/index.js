@@ -14,7 +14,6 @@ function WebcamComponent(addImage) {
     async function  grabImage() {
         mainImage = await webcamRef.current.getScreenshot();
         addImage(mainImage);
-        console.log(mainImage)
       }
     return (
         <div className="WebcamComponent" onClick={grabImage}>
