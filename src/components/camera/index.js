@@ -11,7 +11,6 @@ const videoConstraints = {
     facingMode: 'user'
 }
 function WebcamComponent(addImage) {
-    const [isImage, setImage] = useState(false)
     const [isCamera, setCamera] = useState(false)
     const webcamRef = React.useRef();
     let mainImage;
