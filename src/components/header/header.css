@@ -1,8 +1,6 @@
 .Header {
     display: grid;
     place-items: center center;
-    margin-top: 4.8rem;
-    padding-bottom: 4.8rem;
 }
 .Header__tagline {
     text-align: center;
