@@ -17,7 +17,7 @@ function WebcamComponent(addImage) {
         console.log(mainImage)
       }
     return (
-        <div className="main-container">
+        <div className="WebcamComponent" onClick={grabImage}>
             <Webcam
                 className="WebcamComponent__camera"
                 audio={false}
