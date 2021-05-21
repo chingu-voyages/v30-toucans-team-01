@@ -1,13 +1,10 @@
 import React from 'react';
-import Webcam from 'react-webcam';
-import WebcamComponent from './components/Webcam';
-
-
+import "./App.css";
 
 function App() {
   return (
     <>
-      <WebcamComponent />
+      TODO: HOME VIEW
     </>
   );
 }
