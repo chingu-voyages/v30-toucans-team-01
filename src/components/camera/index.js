@@ -13,7 +13,7 @@ function WebcamComponent(addImage) {
 
     async function  grabImage() {
         mainImage = await webcamRef.current.getScreenshot();
-        setImage(!isImage)
+        addImage(mainImage);
         console.log(mainImage)
       }
     return (
