@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Webcam from 'react-webcam';
 import './camera.css';
-import { AiOutlineCamera } from "react-icons/ai";
 
 const videoConstraints = {
     width: 1280,
