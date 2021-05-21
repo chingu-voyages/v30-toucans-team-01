@@ -1,0 +1,18 @@
+.Menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.Menu__link {
+    text-decoration: none;
+}
+
+.Menu__button {
+    display: grid;
+    place-items: center center;
+    width: 15rem;
+    height: 100%;
+}
