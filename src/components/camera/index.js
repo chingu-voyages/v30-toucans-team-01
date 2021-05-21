@@ -28,7 +28,6 @@ function WebcamComponent(addImage) {
                 width={1280}
                 videoConstraints={videoConstraints}
             />
-            <AiOutlineCamera className="sample-btn" font-size="3em" onClick={grabImage}/>
             {isImage && <img alt="hidden " src="mainImage"></img>}
             
         </div>
