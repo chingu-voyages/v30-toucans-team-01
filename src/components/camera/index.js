@@ -18,7 +18,7 @@ function Camera({addImage}) {
     return (
         <div className="Camera" onClick={grabImage}>
             <Webcam
-                className="Camera__camera"
+                className="Camera__webcam"
                 audio={false}
                 height={720}
                 ref={webcamRef}
