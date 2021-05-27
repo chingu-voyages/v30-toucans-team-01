@@ -1,4 +1,4 @@
-.WebcamComponent {
+.Camera {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,7 +6,7 @@
     height: 80vh;
 }
 
-.WebcamComponent__camera {
+.Camera__camera {
     background: #3d3d3d;
     width: 760px;
     height: 400px;

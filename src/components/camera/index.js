@@ -7,7 +7,7 @@ const videoConstraints = {
     height: 720,
     facingMode: 'user'
 }
-function WebcamComponent({addImage}) {
+function Camera({addImage}) {
     const webcamRef = React.useRef();
     let mainImage;
 
@@ -16,9 +16,9 @@ function WebcamComponent({addImage}) {
         addImage(mainImage);
       }
     return (
-        <div className="WebcamComponent" onClick={grabImage}>
+        <div className="Camera" onClick={grabImage}>
             <Webcam
-                className="WebcamComponent__camera"
+                className="Camera__camera"
                 audio={false}
                 height={720}
                 ref={webcamRef}
@@ -30,4 +30,4 @@ function WebcamComponent({addImage}) {
     )
 }
 
-export default WebcamComponent
+export default Camera
