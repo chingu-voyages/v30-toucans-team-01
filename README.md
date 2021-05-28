@@ -3,7 +3,7 @@
 ## Overview
 FaceIt is a web application that helps people overcome their fears with their face and smile.
 
-Live Link: Coming Soon
+[Live Link](https://v30-01.herokuapp.com/)
 
 ## Features 
 
