@@ -1,0 +1,21 @@
+.Footer {
+    display: grid;
+    place-items: center center;
+}
+
+.Footer__link {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.Footer__text {
+    font-size: 1.2rem;
+}
+
+.Footer__logo {
+    margin-left: 1.2rem;
+    width: 6rem;
+}

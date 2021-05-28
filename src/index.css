@@ -1,0 +1,39 @@
+:root {
+    --main-background-0: #505050;
+    --main-color-0: #05BC38;
+    --main-color-1: #72FFE6;
+    --button-background-0: #5168B7;
+    --button-color-0: #72FFE6;
+    --button-shadow-0: rgba(0,0,0,0.5);
+    --thumbnail-background-0: #72FFE6;
+    --thumbnail-color-0: #05BC38;
+}
+
+html {
+    font-family: 'Galindo', cursive;
+    font-size: 62.5%; /* 62.5% of 16px ~ 10px: 16px browsers typical default font-size */
+    color: var(--main-color-0);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Galindo', cursive;
+    font-size: 3.6rem;
+    color: var(--main-color-1);
+}
+
+p {
+    font-family: 'Galindo', cursive;
+    font-size: 1.8rem;
+    color: var(--main-color-0);
+}
+
+button {
+    font-family: 'Galindo', cursive;
+    font-size: 2.4rem;
+    background-color: var(--button-background-0);
+    color: var(--button-color-0);
+}

@@ -1,0 +1,27 @@
+.Booth {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.Booth__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: grid;
+  pointer-events: none;
+}
+
+.Booth__back-button {
+  margin: 12px;
+  pointer-events: auto;
+  place-self: start start;
+}
+
+.Booth__children {
+  place-self: end center;
+  pointer-events: auto;
+}

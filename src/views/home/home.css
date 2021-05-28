@@ -1,0 +1,9 @@
+.Home {
+    padding-top: 4.8rem;
+    background: var(--main-background-0);
+    display: grid;
+    place-items: center center;
+    row-gap: 4.8rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+}

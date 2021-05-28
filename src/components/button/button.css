@@ -1,0 +1,15 @@
+.Button {
+    border: none;
+    box-shadow: 0 0.4rem 0.4rem var(--button-shadow-0);
+    text-shadow: 0 0.4rem 0.4rem var(--button-shadow-0);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.Button:hover {
+    box-shadow: 0 0.4rem 0.2rem var(--button-shadow-0);
+    text-shadow: 0 0.4rem 0.2rem var(--button-shadow-0);
+}
+.Button:active {
+    box-shadow: 0 0.2rem 0 var(--button-shadow-0);
+    text-shadow: 0 0.2rem 0 var(--button-shadow-0);
+}
