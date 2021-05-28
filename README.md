@@ -1,14 +1,30 @@
-# voyage-tasks
+# FaceIt 
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should but as much care into it's creation and maintenance steps
-as you would any other component of the application.
+## Overview
+FaceIt is a web application that helps people overcome their fears with their face and smile.
 
-If you are unsure of what should go into the `readme` let this article
-written by another Chingu be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+Live Link: Coming Soon
 
-And before we go there's "one more thing"! Once you've decide what to include
-in your `readme` feel free to replace the text we've provided here.
+## Features 
 
-> Own it & Make it your Own!
+This Project includes:
+- [x] Home and Booth Page
+- [x] Camera component that lets people pick an emoji to imitate!
+- [ ] Gallery view that lets users view their previous selfies.
+- [ ] Random Emoji Game!
+
+## Running the project locally
+
+From the repo:
+1. Clone this project locally
+2. Run `$ npm install ` in your terminal
+3. Run `$ npm start ` in terminal.
+4. Go to Booth View, pick an emoji, and take a selfie!
+
+## Tech Used
+- HTML, CSS
+- ReactJS
+
+## Members 
+- `Lily`
+- `Trek`
