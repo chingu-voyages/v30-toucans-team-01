@@ -4,4 +4,6 @@
     display: grid;
     place-items: center center;
     row-gap: 4.8rem;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
