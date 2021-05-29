@@ -5,7 +5,7 @@ import './header.css';
 function Header() {
     return (
         <header className="Header">
-            <img className="Header__logo" src={logo} />
+            <img className="Header__logo" src={logo} alt="logo" />
             <p className="Header__tagline">
                 Practice your facial expression mimicry with these fun games!
             </p>

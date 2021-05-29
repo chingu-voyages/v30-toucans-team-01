@@ -1,20 +1,17 @@
+import Snapshot from './snapshot.js'
+
 class Session {
-    constructor(imageURL, expressionText, currentDate, currentTime) {
-        this.snapshot = {
-            id : {
-                imageURL,expressionText
-            }
-        }
-        this.createdAt = {
-            monthYear : currentDate,
-            hourSeconds : currentTime
-        };
-        this.updatedAt = null;
+
+    constructor() {
+        this.snapshots = [];
+        this.id = ''; // todo: import uuid library for ids
     }
 
-    Snapshot() {
-        console.log(this.snapshot.id)
+    addSnapshot(imageURL, expressionText) {
+        const snapshot = new Snapshot(imageURL, expressionText);
+        this.snapshots.push(snapshot);
     }
+
 }
 
 export default Session;

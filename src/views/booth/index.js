@@ -5,20 +5,25 @@ import backIcon from '../../images/back-icon.svg'
 import Session  from '../../components/sessions'
 import './booth.css'
 
-function Booth({children}) {
+function Booth({children, addSession}) {
     const [expression, setExpression] = React.useState('');
+    const [tempSession, setTempSession] = React.useState(new Session());
+
+    React.useEffect(() => {
+        const session = tempSession
+        return () => {
+            {session.snapshots.length !== 0 && addSession(session)}
+        }
+    },[])
+    
     function addImage(props){
+        const session1 = tempSession;
 
-        // Grabbing Time
-        const today = new Date();
-        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-
-        // Creating a new Session
-        const session1 = new Session(props, expression, date, time);
-        console.log(session1);
-        console.log(date + " " + time);
-        console.log("Pass")
+        // Input session
+        session1.addSnapshot(props, expression);
+        setTempSession(session1)
+        console.log(tempSession);
+        console.log("addImage Test Passed")
     }
 
     
@@ -26,7 +31,7 @@ function Booth({children}) {
         <div className="Booth">
             <Camera addImage={addImage}/>
             <div className="Booth__overlay">
-                <Link to="/" className="Booth__back-button"><img className="Booth__backBtn" src={backIcon}/></Link>
+                <Link to="/" className="Booth__back-button"><img className="Booth__backBtn" alt="back button" src={backIcon}/></Link>
                 <div className="Booth__children">
                     {/* {children} */}
                     <div>

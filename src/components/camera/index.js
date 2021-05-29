@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Webcam from 'react-webcam';
 import './camera.css';
 
