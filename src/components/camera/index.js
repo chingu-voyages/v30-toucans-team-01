@@ -9,11 +9,11 @@ const videoConstraints = {
 }
 function Camera({addImage}) {
     const webcamRef = React.useRef();
-    let mainImage;
+    let imageURL;
 
     async function  grabImage() {
-        mainImage = await webcamRef.current.getScreenshot();
-        addImage(mainImage);
+        imageURL = await webcamRef.current.getScreenshot();
+        addImage(imageURL);
       }
     return (
         <div className="Camera" onClick={grabImage}>

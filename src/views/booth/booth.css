@@ -25,3 +25,18 @@
   place-self: end center;
   pointer-events: auto;
 }
+
+.Booth__emoji{
+  font-size: 5rem;
+  margin: 5px 15px;
+  cursor: pointer;
+  filter:grayscale(1);
+}
+
+.Booth__emoji:hover {
+  filter: none;
+}
+
+input[type=checkbox] {
+  display:none;
+}
