@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,13 +10,17 @@ import Booth from './views/booth';
 import Session from './components/sessions'
 
 function App() {
-  const [sessions, setSessions] = React.useState([new Session()]); 
+  const [sessions, setSessions] = useState([]); 
 
   function addToSessions(props) {
-    console.log(props)
-    setSessions([...sessions, props])
-    console.log(sessions)
+    // console.log(props)
+    setSessions(session => [...sessions, props])
   }
+
+  useEffect(() => {
+    console.log(sessions)
+  }, [sessions]) 
+
   return (
     <Router>
       <Switch>

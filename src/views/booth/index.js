@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import Camera from '../../components/camera'
 import { Link } from 'react-router-dom'
 import backIcon from '../../images/back-icon.svg'
@@ -6,22 +6,19 @@ import Session  from '../../components/sessions'
 import './booth.css'
 
 function Booth({children, addSession}) {
-    const [expression, setExpression] = React.useState('');
-    const [tempSession, setTempSession] = React.useState(new Session());
+    const [expression, setExpression] = useState('');
+    const tempSession = useRef(new Session());
 
-    React.useEffect(() => {
-        const session = tempSession
+    useEffect(() => {
+        const session = tempSession.current
         return () => {
             {session.snapshots.length !== 0 && addSession(session)}
         }
     },[])
     
     function addImage(props){
-        const session1 = tempSession;
-
         // Input session
-        session1.addSnapshot(props, expression);
-        setTempSession(session1)
+        tempSession.current.addSnapshot(props, expression);
         console.log(tempSession);
         console.log("addImage Test Passed")
     }
