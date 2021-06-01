@@ -6,7 +6,7 @@ import './menu.css';
 function Menu() {
     return (
         <nav className="Menu">
-            <Link to="/booth" className="Menu__link">
+            <Link to="/fiverandomemojis" className="Menu__link">
                 <Button className="Menu__button">
                     Five Random Emojis
                 </Button>

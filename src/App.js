@@ -7,6 +7,7 @@ import {
 import Home from './views/home';
 import "./App.css";
 import Booth from './views/booth';
+import FiveRandomEmojis from './views/fiveRandomEmojis';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route path="/booth">
           <Booth/>
+        </Route>
+        <Route path="/fiverandomemojis">
+          <FiveRandomEmojis />
         </Route>
         <Route path="/">
           <Home />
