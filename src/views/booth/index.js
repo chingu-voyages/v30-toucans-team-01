@@ -6,23 +6,6 @@ import Session  from '../../services/sessions'
 import './booth.css'
 
 function Booth({children, addSession, className, addImage}) {
-    const [expression, setExpression] = useState('');
-    const tempSession = useRef(new Session());
-
-    useEffect(() => {
-        const session = tempSession.current
-        return () => {
-            {session.snapshots.length !== 0 && addSession(session)}
-        }
-    },[])
-    
-    function addImage(props){
-        // Input session
-        tempSession.current.addSnapshot(props, expression);
-        console.log(tempSession);
-        console.log("addImage Test Passed")
-    }
-
     return (
         <div className={`Booth ${className || ''}`}>
             <Camera addImage={addImage}/>
