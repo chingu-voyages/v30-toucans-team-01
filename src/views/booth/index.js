@@ -5,7 +5,7 @@ import backIcon from '../../images/back-icon.svg'
 import Session  from '../../services/sessions'
 import './booth.css'
 
-function Booth({children, addSession, className}) {
+function Booth({children, addSession, className, addImage}) {
     const [expression, setExpression] = useState('');
     const tempSession = useRef(new Session());
 
