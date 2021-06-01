@@ -25,6 +25,7 @@ function Camera({addImage}) {
                 screenshotFormat="image/jpeg"
                 width={1280}
                 videoConstraints={videoConstraints}
+                imageSmoothing={true}
             />
         </div>
     )
