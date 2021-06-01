@@ -23,24 +23,13 @@ function Booth({children, addSession}) {
         console.log("addImage Test Passed")
     }
 
-    
     return (
-        <div className="Booth">
+        <div className={`Booth ${className || ''}`}>
             <Camera addImage={addImage}/>
             <div className="Booth__overlay">
                 <Link to="/" className="Booth__back-button"><img className="Booth__backBtn" alt="back button" src={backIcon}/></Link>
                 <div className="Booth__children">
-                    {/* {children} */}
-                    <div>
-                        <input id="first__emoji" type="checkbox" />
-                        <label for="first__emoji" className="Booth__emoji" onClick={() => setExpression('😎')}>😎</label>
-                        <input id="second__emoji" type="checkbox" />
-                        <label for="second__emoji" className="Booth__emoji" onClick={() => setExpression('😀')}>😀</label>
-                        <input id="third__emoji" type="checkbox"  />
-                        <label for="third__emoji" className="Booth__emoji" onClick={() => setExpression('😠')}>😠</label>
-                        <input id="fourth__emoji" type="checkbox" />
-                        <label for="fourth__emoji" className="Booth__emoji" onClick={() => setExpression('😥')}>😥</label>
-                    </div>
+                    {children}
                 </div>
             </div>
         </div>

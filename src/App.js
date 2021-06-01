@@ -7,7 +7,7 @@ import {
 import Home from './views/home';
 import "./App.css";
 import Booth from './views/booth';
-import Session from './components/sessions'
+import FiveRandomEmojis from './views/fiveRandomEmojis';
 
 function App() {
   const [sessions, setSessions] = useState([]); 
@@ -26,6 +26,9 @@ function App() {
       <Switch>
         <Route path="/booth" >
           <Booth addSession={addToSessions}/>
+        </Route>
+        <Route path="/fiverandomemojis">
+          <FiveRandomEmojis />
         </Route>
         <Route path="/">
           <Home />
