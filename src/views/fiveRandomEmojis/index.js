@@ -7,6 +7,13 @@ import './fiveRandomEmojis.css';
 function FiveRandomEmojis({addSession}) {
     const [emojis, setEmojis] = useState(randomEmojisArray(5))
     const tempSession = useRef(new Session());
+
+    useEffect(() => {
+        const session = tempSession.current
+        return () => {
+            {session.snapshots.length !== 0 && addSession(session)}
+        }
+    },[])
     
     function nextEmoji() {
         setEmojis(emojis => [...emojis, emojis[0]].slice(1))
