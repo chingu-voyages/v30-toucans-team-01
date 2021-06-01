@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .Booth__overlay {
@@ -23,5 +24,4 @@
 
 .Booth__children {
   place-self: end center;
-  pointer-events: auto;
 }
