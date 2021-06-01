@@ -25,10 +25,10 @@ function App() {
     <Router>
       <Switch>
         <Route path="/booth" >
-          <Booth addSession={addToSessions}/>
+          <Booth />
         </Route>
         <Route path="/fiverandomemojis">
-          <FiveRandomEmojis />
+          <FiveRandomEmojis addSession={addToSessions}/>
         </Route>
         <Route path="/">
           <Home />
