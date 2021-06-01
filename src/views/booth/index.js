@@ -2,10 +2,10 @@ import React, {useState, useRef, useEffect} from 'react'
 import Camera from '../../components/camera'
 import { Link } from 'react-router-dom'
 import backIcon from '../../images/back-icon.svg'
-import Session  from '../../components/sessions'
+import Session  from '../../services/sessions'
 import './booth.css'
 
-function Booth({children, addSession}) {
+function Booth({children, addSession, className}) {
     const [expression, setExpression] = useState('');
     const tempSession = useRef(new Session());
 
