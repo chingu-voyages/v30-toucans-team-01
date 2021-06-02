@@ -1,38 +1,23 @@
 import React from 'react'
 import './gallery.css'
 
-function index() {
+function Gallery({snapshots}) {
+    const date = snapshots[0].timeStamp.getFullYear() + '-' + (snapshots[0].timeStamp.getMonth() + 1) + '-' + snapshots[0].timeStamp.getDate();
     return (
         <>
             <div className="gallery">
-                  <div className="gallery__header">10-May-2021</div>
+                  <div className="gallery__header">{date}</div>
                   <div className="top__images">
-                        <div className="gallery__image-container">
-                            <img  className ="gallery__image" src="https://source.unsplash.com/random" alt="random photo"/>
-                            <span className="gallery__expression">😀</span>
-                        </div>
-                        <div className="gallery__image-container">
-                            <img className ="gallery__image" src="https://source.unsplash.com/random" alt="random photo"/>
-                            <span className="gallery__expression">😀</span>
-                        </div>
-                        <div className="gallery__image-container">
-                            <img  className ="gallery__image" src="https://source.unsplash.com/random" alt="random photo"/>
-                            <span className="gallery__expression">😀</span>
-                        </div>
+                        {snapshots.map(snapshot => (
+                            <div className="gallery__image-container">
+                                <img  className ="gallery__image" src={snapshot.imageURL} alt="random photo"/>
+                                <span className="gallery__expression">{snapshot.expressionText}</span>
+                            </div>
+                        ))}
                   </div>    
-                  <div className="bottom__images">
-                        <div className="gallery__image-container">
-                            <img  className ="gallery__image" src="https://source.unsplash.com/random" alt="random photo"/>
-                            <span className="gallery__expression">😀</span>
-                        </div>
-                        <div className="gallery__image-container">
-                            <img  className ="gallery__image" src="https://source.unsplash.com/random" alt="random photo"/>
-                            <span className="gallery__expression">😀</span>
-                        </div>
-                </div>
             </div>
         </>
     )
 }
 
-export default index
+export default Gallery

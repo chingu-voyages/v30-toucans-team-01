@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 
 * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
     margin:0;
     padding:0;
 }
@@ -24,20 +23,19 @@ body {
 }
 
 .gallery__header {
-    padding: 10px 20px;
-    border: #000 1px solid;
-    background-color: #45B39D;
+    font-size: 1.7rem;
+    padding: 5px;
+    color: var(--main-color-0);
+    background-color: var(--button-background-0);
 }
 
 .top__images {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.bottom__images {
     display: flex;
     justify-content: center;
+    max-width: 210px;
+    flex-wrap: wrap;
 }
+
 
 .gallery__image-container {
     position: relative;
@@ -47,10 +45,13 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
+    font-size: 1.4rem;
 }
 
 .gallery__image {
     max-height: 100px;
     max-width: 70px;
+    min-width: 70px;
+    min-height: 100px;
     display: block;
 }

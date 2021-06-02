@@ -7,3 +7,9 @@
     min-height: 100vh;
     box-sizing: border-box;
 }
+
+.gallery__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}

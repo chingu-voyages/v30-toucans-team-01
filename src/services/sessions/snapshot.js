@@ -3,7 +3,7 @@ class Snapshot{
     constructor(imageURL, expressionText){
         this.id = '';
         this.imageURL = imageURL;
-        this.expessionText = expressionText;
+        this.expressionText = expressionText;
         this.timeStamp = new Date();
     }
 }
