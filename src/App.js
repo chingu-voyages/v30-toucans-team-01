@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,14 +10,25 @@ import Booth from './views/booth';
 import FiveRandomEmojis from './views/fiveRandomEmojis';
 
 function App() {
+  const [sessions, setSessions] = useState([]); 
+
+  function addToSessions(props) {
+    // console.log(props)
+    setSessions(session => [...sessions, props])
+  }
+
+  useEffect(() => {
+    console.log(sessions)
+  }, [sessions]) 
+
   return (
     <Router>
       <Switch>
-        <Route path="/booth">
-          <Booth/>
+        <Route path="/booth" >
+          <Booth />
         </Route>
         <Route path="/fiverandomemojis">
-          <FiveRandomEmojis />
+          <FiveRandomEmojis addSession={addToSessions}/>
         </Route>
         <Route path="/">
           <Home />

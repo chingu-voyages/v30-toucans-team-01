@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Webcam from 'react-webcam';
 import './camera.css';
 
@@ -9,11 +9,11 @@ const videoConstraints = {
 }
 function Camera({addImage}) {
     const webcamRef = React.useRef();
-    let mainImage;
+    let imageURL;
 
     async function  grabImage() {
-        mainImage = await webcamRef.current.getScreenshot();
-        addImage(mainImage);
+        imageURL = await webcamRef.current.getScreenshot();
+        addImage(imageURL);
       }
     return (
         <div className="Camera" onClick={grabImage}>
@@ -25,6 +25,7 @@ function Camera({addImage}) {
                 screenshotFormat="image/jpeg"
                 width={1280}
                 videoConstraints={videoConstraints}
+                imageSmoothing={true}
             />
         </div>
     )

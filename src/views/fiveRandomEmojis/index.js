@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { emojiList, randomEmojisArray } from '../../services/emoji';
+import Session from '../../services/sessions';
 import Booth from '../booth';
 import './fiveRandomEmojis.css';
 
 function FiveRandomEmojis({addSession}) {
     const [emojis, setEmojis] = useState(randomEmojisArray(5))
+    const tempSession = useRef(new Session());
+
+    useEffect(() => {
+        const session = tempSession.current
+        return () => {
+            {session.snapshots.length !== 0 && addSession(session)}
+        }
+    },[])
     
     function nextEmoji() {
         setEmojis(emojis => [...emojis, emojis[0]].slice(1))
     }
-    function addImage() {
-        /* add Trek182021's addImage code here */
+    function addImage(props) {
+        tempSession.current.addSnapshot(props, emojis[2]);
+        console.log(tempSession);
+        console.log("addImage Test Passed")
         nextEmoji()
     }
     return (
