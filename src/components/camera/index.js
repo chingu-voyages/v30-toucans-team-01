@@ -15,6 +15,11 @@ function Camera({addImage}) {
         imageURL = await webcamRef.current.getScreenshot();
         addImage(imageURL);
       }
+
+    React.useEffect(() => {
+        {!webcamRef.current.state.hasUserMedia && alert("Please enable camera...")}
+    },[webcamRef])
+
     return (
         <div className="Camera" onClick={grabImage}>
             <Webcam
