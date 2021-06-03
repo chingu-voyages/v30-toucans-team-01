@@ -1,10 +1,11 @@
 import Snapshot from './snapshot.js'
+import {v4 as uuidv4} from 'uuid';
 
 class Session {
 
     constructor() {
         this.snapshots = [];
-        this.id = ''; // todo: import uuid library for ids
+        this.id = uuidv4(); // todo: import uuid library for ids
     }
 
     addSnapshot(imageURL, expressionText) {
