@@ -25,3 +25,12 @@
 .Booth__children {
   place-self: end center;
 }
+
+.Booth__image-preview {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.image-preview__image {
+  max-width: 100%;
+}
