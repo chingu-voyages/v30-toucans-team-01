@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Webcam from 'react-webcam';
 import './camera.css';
+import Modal from '../modal';
 
 const videoConstraints = {
     width: 1280,
@@ -9,16 +10,14 @@ const videoConstraints = {
 }
 function Camera({addImage}) {
     const webcamRef = React.useRef();
+    const [hasCamera, setCamera] = useState(navigator.mediaDevices)
     let imageURL;
 
     async function  grabImage() {
         imageURL = await webcamRef.current.getScreenshot();
         addImage(imageURL);
-      }
+    }
 
-    React.useEffect(() => {
-        {!webcamRef.current.state.hasUserMedia && alert("Please enable camera...")}
-    },[webcamRef])
 
     return (
         <div className="Camera" onClick={grabImage}>
@@ -27,11 +26,12 @@ function Camera({addImage}) {
                 audio={false}
                 height={720}
                 ref={webcamRef}
-                screenshotFormat="image/jpeg"
+                screenshotFormat="image/webp"
                 width={1280}
                 videoConstraints={videoConstraints}
                 imageSmoothing={true}
-            />
+            /> 
+            {!hasCamera && <Modal/>}
         </div>
     )
 }
