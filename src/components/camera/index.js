@@ -18,32 +18,32 @@ function Camera({addImage}) {
       }
     return (
         <div className="Camera__wrapper">
-            {hasCamera === null && 
-                <dialog open>
-                    Accessing camera...'
-                </dialog>}
-            {hasCamera === false ? 
-                <dialog open>
-                    'No Camera found!'
-                    <button onClick={() => setCamera(null)}>
-                        Check again
-                    </button>
-                </dialog> :
-                <div className="Camera" onClick={grabImage}>
-                    {(hasCamera || hasCamera === null) && <Webcam
-                        className="Camera__webcam"
-                        audio={false}
-                        height={720}
-                        ref={webcamRef}
-                        screenshotFormat="image/webp"
-                        width={1280}
-                        videoConstraints={videoConstraints}
-                        imageSmoothing={true}
-                        onUserMediaError={() => setCamera(false)}
-                        onUserMedia={() => setCamera(true)}
-                    />}
-                </div>
-            }
+            {hasCamera === null && 
+                <dialog open>
+                    Accessing camera...'
+                </dialog>}
+                {hasCamera === false ? 
+                    <dialog open>
+                        'No Camera found!'
+                    <button onClick={() => setCamera(null)}>
+                        Check again
+                    </button>
+                </dialog> :
+                <div className="Camera" onClick={grabImage}>
+                    {(hasCamera || hasCamera === null) && <Webcam
+                        className="Camera__webcam"
+                        audio={false}
+                        height={720}
+                        ref={webcamRef}
+                        screenshotFormat="image/webp"
+                        width={1280}
+                        videoConstraints={videoConstraints}
+                        imageSmoothing={true}
+                        onUserMediaError={() => setCamera(false)}
+                        onUserMedia={() => setCamera(true)}
+                    />}
+                </div>
+            }
         </div>
     )
 }
