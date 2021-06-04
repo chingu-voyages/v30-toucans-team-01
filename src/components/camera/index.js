@@ -9,10 +9,11 @@ const videoConstraints = {
 }
 function Camera({addImage}) {
     const webcamRef = React.useRef();
-    const [hasCamera, setCamera] = useState(null)
+    const [hasCamera, setHasCamera] = useState(null)
     let imageURL;
 
-    async function  grabImage() {
+    async function grabImage() {
+        setHasCamera(webcamRef.current.stream.active);
         imageURL = await webcamRef.current.getScreenshot();
         addImage(imageURL);
       }
@@ -25,7 +26,7 @@ function Camera({addImage}) {
                 {hasCamera === false ? 
                     <dialog open>
                         'No Camera found!'
-                    <button onClick={() => setCamera(null)}>
+                    <button onClick={() => setHasCamera(null)}>
                         Check again
                     </button>
                 </dialog> :
@@ -39,8 +40,8 @@ function Camera({addImage}) {
                         width={1280}
                         videoConstraints={videoConstraints}
                         imageSmoothing={true}
-                        onUserMediaError={() => setCamera(false)}
-                        onUserMedia={() => setCamera(true)}
+                        onUserMediaError={() => setHasCamera(false)}
+                        onUserMedia={() => setHasCamera(true)}
                     />}
                 </div>
             }
