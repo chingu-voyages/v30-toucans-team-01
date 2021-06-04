@@ -11,12 +11,13 @@ function FiveRandomEmojis({addSession}) {
     const history = useHistory();
 
     useEffect(() => {
+        console.count('useEffect')
         const session = tempSession.current
         return () => {
-            {session.snapshots.length !== 0 && addSession(session)}
+            session.snapshots.length !== 0 && addSession(session)
         }
-    },[])
-    
+    },[addSession])
+
     useEffect(() => {
         if (tempSession.current.snapshots.length >= 5) {
             history.push('/')
