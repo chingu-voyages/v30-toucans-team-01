@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
 import './camera.css';
-
+import Modal from '../modal'
 const videoConstraints = {
     width: 1280,
     height: 720,
@@ -24,11 +24,13 @@ function Camera({addImage}) {
                     Accessing camera...'
                 </dialog>}
                 {hasCamera === false ? 
-                    <dialog open>
-                        'No Camera found!'
+                    <dialog className="Camera__dialogbox"open>
+                        <Modal>
                     <button onClick={() => setHasCamera(null)}>
                         Check again
-                    </button>
+                        </button>
+                        </Modal>
+                    
                 </dialog> :
                 <div className="Camera" onClick={grabImage}>
                     {(hasCamera || hasCamera === null) && <Webcam
