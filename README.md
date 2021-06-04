@@ -10,7 +10,7 @@ FaceIt is a web application that helps people overcome their fears with their fa
 This Project includes:
 - [x] Home and Booth Page
 - [x] Camera component that lets people pick an emoji to imitate!
-- [ ] Gallery view that lets users view their previous selfies.
+- [x] Gallery view that lets users view their previous selfies.
 - [ ] Random Emoji Game!
 
 ## Running the project locally
