@@ -11,7 +11,7 @@ This Project includes:
 - [x] Home and Booth Page
 - [x] Camera component that lets people pick an emoji to imitate!
 - [x] Gallery view that lets users view their previous selfies.
-- [ ] Random Emoji Game!
+- [x] Random Emoji Game!
 
 ## Running the project locally
 
