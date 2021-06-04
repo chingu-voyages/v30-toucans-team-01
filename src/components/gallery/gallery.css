@@ -39,7 +39,6 @@
 
 .gallery__image {
     max-width: 100%;
-    max-width: 70px;
     min-height: 100px;
     display: block;
 }
