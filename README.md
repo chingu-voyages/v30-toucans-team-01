@@ -1,4 +1,4 @@
-# FaceIt 
+# ![FaceIt](./src/images/logo.svg)
 
 ## Overview
 FaceIt is a web application that helps people overcome their fears with their face and smile.
