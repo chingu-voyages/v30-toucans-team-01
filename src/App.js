@@ -31,7 +31,7 @@ function App() {
           <FiveRandomEmojis addSession={addToSessions}/>
         </Route>
         <Route path="/">
-          <Home />
+          <Home sessions={sessions}/>
         </Route>
       </Switch>
     </Router>
