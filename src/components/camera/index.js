@@ -1,5 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
+import Countdown from '../countdown';
 import './camera.css';
 
 const videoConstraints = {
@@ -16,7 +17,8 @@ function Camera({addImage}) {
         addImage(imageURL);
       }
     return (
-        <div className="Camera" onClick={grabImage}>
+        <div className="Camera">
+            <Countdown seconds={3} callback={grabImage} />
             <Webcam
                 className="Camera__webcam"
                 audio={false}
