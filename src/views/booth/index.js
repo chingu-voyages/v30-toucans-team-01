@@ -1,11 +1,10 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React from 'react'
 import Camera from '../../components/camera'
 import { Link } from 'react-router-dom'
 import backIcon from '../../images/back-icon.svg'
-import Session  from '../../services/sessions'
 import './booth.css'
 
-function Booth({children, addSession, className, addImage}) {
+function Booth({children, className, addImage}) {
     return (
         <div className={`Booth ${className || ''}`}>
             <Camera addImage={addImage}/>
