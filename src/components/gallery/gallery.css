@@ -27,6 +27,7 @@
 
 .gallery__image-container {
     position: relative;
+    max-width: 100px;
 }
 
 .gallery__expression {
