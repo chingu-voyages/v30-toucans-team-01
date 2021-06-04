@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
+import Countdown from '../countdown';
 import './camera.css';
 import Modal from '../modal'
 const videoConstraints = {
@@ -32,19 +33,23 @@ function Camera({addImage}) {
                         </Modal>
                     
                 </dialog> :
-                <div className="Camera" onClick={grabImage}>
-                    {(hasCamera || hasCamera === null) && <Webcam
-                        className="Camera__webcam"
-                        audio={false}
-                        height={720}
-                        ref={webcamRef}
-                        screenshotFormat="image/webp"
-                        width={1280}
-                        videoConstraints={videoConstraints}
-                        imageSmoothing={true}
-                        onUserMediaError={() => setHasCamera(false)}
-                        onUserMedia={() => setHasCamera(true)}
-                    />}
+                <div className="Camera" >
+                    {(hasCamera || hasCamera === null) && 
+                    <>
+                        <Countdown seconds={3} callback={grabImage} />
+                        <Webcam
+                            className="Camera__webcam"
+                            audio={false}
+                            height={720}
+                            ref={webcamRef}
+                            screenshotFormat="image/webp"
+                            width={1280}
+                            videoConstraints={videoConstraints}
+                            imageSmoothing={true}
+                            onUserMediaError={() => setHasCamera(false)}
+                            onUserMedia={() => setHasCamera(true)}
+                        />
+                    </>}
                 </div>
             }
         </div>
