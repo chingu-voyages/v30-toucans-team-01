@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { emojiList, randomEmojisArray } from '../../services/emoji';
 import Session from '../../services/sessions';
 import Booth from '../booth';
@@ -7,6 +8,7 @@ import './fiveRandomEmojis.css';
 function FiveRandomEmojis({addSession}) {
     const [emojis, setEmojis] = useState(randomEmojisArray(5))
     const tempSession = useRef(new Session());
+    const history = useHistory();
 
     useEffect(() => {
         const session = tempSession.current
@@ -14,6 +16,12 @@ function FiveRandomEmojis({addSession}) {
             {session.snapshots.length !== 0 && addSession(session)}
         }
     },[])
+    
+    useEffect(() => {
+        if (tempSession.current.snapshots.length >= 5) {
+            history.push('/')
+        }
+    }, [history, tempSession.current.snapshots.length])
     
     function nextEmoji() {
         setEmojis(emojis => [...emojis, emojis[0]].slice(1))
