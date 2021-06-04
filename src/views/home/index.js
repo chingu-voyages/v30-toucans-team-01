@@ -12,10 +12,7 @@ function Home({sessions}) {
             {/* TODO: HOME VIEW */}
             <Header/>
             <Menu/>
-            <div className="gallery__container">
-                {sessions.map((session, index) =>  <Gallery key={index} snapshots={session.snapshots}/>)}
-            </div>
-            
+            <Gallery sessions={sessions}/>   
             <Footer/>
         </div>
     );

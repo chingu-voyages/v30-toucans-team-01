@@ -4,6 +4,12 @@
     color: #fff;
 }
 
+.gallery__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
 .gallery__header {
     font-size: 1.7rem;
     padding: 5px;
