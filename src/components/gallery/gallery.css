@@ -20,7 +20,7 @@
 .top__images {
     display: flex;
     justify-content: center;
-    max-width: 210px;
+    max-width: 200px;
     flex-wrap: wrap;
 }
 
@@ -33,10 +33,11 @@
 .gallery__expression {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 5px;
     font-size: 1.4rem;
 }
 
 .gallery__image {
     max-width: 100%;
+    display: block;
 }
