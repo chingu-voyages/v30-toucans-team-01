@@ -6,7 +6,7 @@
     height: 100vh;
     display: grid;
     place-items: center center;
-    z-index: 200;
+    z-index: 90;
 }
 
 .Countdown__count {

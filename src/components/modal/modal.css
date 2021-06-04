@@ -1,0 +1,26 @@
+.modal__container {
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100vh;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    font-size: 1.6rem;
+}
+
+.modal > h1 {
+    letter-spacing: 5px;
+    margin: 0px 0px 10px 0;
+}
