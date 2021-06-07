@@ -1,16 +1,16 @@
-.gallery {
+.thumbnail {
     /* width: 160px; */
     text-align: center;
     color: #fff;
 }
 
-.gallery__container {
+.thumbnail__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
 
-.gallery__header {
+.thumbnail__header {
     font-size: 1.7rem;
     padding: 5px;
     color: var(--main-color-0);
@@ -25,19 +25,19 @@
 }
 
 
-.gallery__image-container {
+.thumbnail__image-container {
     position: relative;
     max-width: 100px;
 }
 
-.gallery__expression {
+.thumbnail__expression {
     position: absolute;
     bottom: 0;
     left: 5px;
     font-size: 1.4rem;
 }
 
-.gallery__image {
+.thumbnail__image {
     max-width: 100%;
     display: block;
 }

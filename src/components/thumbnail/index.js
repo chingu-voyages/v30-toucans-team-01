@@ -3,12 +3,12 @@ import './gallery.css'
 import {Session} from './snapshot';
 
 
-function Gallery({sessions}) {
+function Thumbnail({sessions}) {
     return (
-        <div className="gallery__container">
+        <div className="thumbnail__container">
             {sessions.map((session, index) =>  <Session key={session.id} snapshots={session.snapshots}/>)}
         </div>
     )
 }
 
-export default Gallery
+export default Thumbnail

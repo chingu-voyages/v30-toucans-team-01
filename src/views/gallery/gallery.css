@@ -1,0 +1,51 @@
+.gallery__container {
+    min-height: 100vh;
+    display: grid;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #3d3d3d;
+}
+
+.gallery__header {
+    background: #000;
+    width: 100vw;
+    text-align: center;
+}
+
+.image__gallery {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.image__gallery img {
+    width: 300px;
+    height: 350px;
+    max-width: none;
+}
+.gallery__container .thumbnail__expression {
+    font-size: 3rem;
+}
+
+.image__gallery > div {
+    max-width: none;
+    margin: 50px;
+}
+.gallery__showcase {
+    width: 100vw;
+    min-height: 40vh;
+    display: grid;
+    place-items: center center;
+    padding-bottom: 20px;
+}
+
+.gallery__showcase img {
+    height: 500px;
+    width: 400px;
+}
+
+.gallery__showcase > div {
+    max-width: none;
+}

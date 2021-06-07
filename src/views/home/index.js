@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Menu from '../../components/menu';
-import Gallery from '../../components/gallery';
+import Thumbnail from '../../components/thumbnail';
 import './home.css';
 
 function Home({sessions}) {
@@ -12,7 +12,7 @@ function Home({sessions}) {
             {/* TODO: HOME VIEW */}
             <Header/>
             <Menu/>
-            <Gallery sessions={sessions}/>   
+            <Thumbnail sessions={sessions}/>   
             <Footer/>
         </div>
     );

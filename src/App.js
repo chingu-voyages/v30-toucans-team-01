@@ -8,6 +8,8 @@ import Home from './views/home';
 import "./App.css";
 import Booth from './views/booth';
 import FiveRandomEmojis from './views/fiveRandomEmojis';
+import Gallery from './views/gallery';
+
 
 function App() {
   const [sessions, setSessions] = useState([]); 
@@ -29,6 +31,8 @@ function App() {
         </Route>
         <Route path="/fiverandomemojis">
           <FiveRandomEmojis addSession={addToSessions}/>
+        </Route>
+        <Route path="/gallery" component={Gallery}>
         </Route>
         <Route path="/">
           <Home sessions={sessions}/>
