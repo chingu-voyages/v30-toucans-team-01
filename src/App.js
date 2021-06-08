@@ -8,6 +8,8 @@ import Home from './views/home';
 import "./App.css";
 import Booth from './views/booth';
 import FiveRandomEmojis from './views/fiveRandomEmojis';
+import db from './services/faceitdb'
+import { useLiveQuery } from "dexie-react-hooks";
 
 function App() {
   const [sessions, setSessions] = useState([]); 
@@ -18,8 +20,17 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(sessions)
+    console.log(sessions[0])
+    {sessions.length > 1 && db.sessions.add({
+      snapshots: sessions[sessions.length-1].snapshots})}
   }, [sessions]) 
+
+ 
+
+  useEffect(() => {
+    console.log(db.sessions.get('1'))
+  },[])
+
 
   return (
     <Router>
