@@ -32,8 +32,6 @@ function App() {
         <Route path="/fiverandomemojis">
           <FiveRandomEmojis addSession={addToSessions}/>
         </Route>
-        <Route path="/gallery" component={Gallery}>
-        </Route>
         <Route path="/">
           <Home sessions={sessions}/>
         </Route>

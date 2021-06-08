@@ -5,9 +5,10 @@
 }
 
 .thumbnail__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    justify-content:center;
+    flex-grow: wrap;
+    align-items: center
 }
 
 .thumbnail__header {
