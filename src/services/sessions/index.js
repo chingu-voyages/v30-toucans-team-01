@@ -1,18 +1,17 @@
 import Snapshot from './snapshot.js'
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuidv4} from 'uuid'
+import base64ToBlob from '../helpers/base64ToBlob.js'
 
 class Session {
-
-    constructor() {
-        this.snapshots = [];
-        this.id = uuidv4(); // todo: import uuid library for ids
+    constructor(id, snapshots) {
+        this.snapshots = snapshots ? snapshots.map(props => new Snapshot(...props)) : []
+        this.id = id || uuidv4()
     }
-
-    addSnapshot(imageURL, expressionText) {
-        const snapshot = new Snapshot(imageURL, expressionText);
-        this.snapshots.push(snapshot);
+    async addSnapshot(base64ImageData, expressionText) {
+        const imageBlob = await base64ToBlob(base64ImageData)
+        const snapshot = new Snapshot(imageBlob, expressionText)
+        this.snapshots.push(snapshot)
     }
-
 }
 
-export default Session;
+export default Session
