@@ -9,26 +9,28 @@ import "./App.css";
 import Booth from './views/booth';
 import FiveRandomEmojis from './views/fiveRandomEmojis';
 import db from './services/faceitdb'
-import { useLiveQuery } from "dexie-react-hooks";
 
 function App() {
   const [sessions, setSessions] = useState([]); 
 
-  function addToSessions(props) {
+  async function addToSessions(props) {
     // console.log(props)
     setSessions(session => [...sessions, props])
+    await db.sessions.add(props)
   }
 
   useEffect(() => {
     console.log(sessions[0])
-    {sessions.length > 1 && db.sessions.add({
-      snapshots: sessions[sessions.length-1].snapshots})}
+    // return () => 
+
+    // {sessions.length > 1 && db.sessions.add({snapshots: sessions[sessions.length-1].snapshots})}
   }, [sessions]) 
 
  
 
-  useEffect(() => {
-    console.log(db.sessions.get('1'))
+  useEffect(async () => {
+    let temp = await db.sessions.toArray();
+    setSessions(temp)
   },[])
 
 
