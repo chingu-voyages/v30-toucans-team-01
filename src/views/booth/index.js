@@ -20,7 +20,7 @@ function Booth({children, className, addImage}) {
             {imagePreview && <dialog open className="Booth__image-preview">
                 <img className="image-preview__image" src={imagePreview} alt="Image preview" />
             </dialog>}
-            <Camera addImage={handleAddImage}/>
+            <Camera addImage={handleAddImage} shutterEnabled={!imagePreview} />
             <div className="Booth__overlay">
                 <Link to="/" className="Booth__back-button"><img className="Booth__backBtn" alt="back button" src={backIcon}/></Link>
                 <div className="Booth__children">
