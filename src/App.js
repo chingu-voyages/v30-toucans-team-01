@@ -13,17 +13,14 @@ import db from './services/faceitdb'
 function App() {
   const [sessions, setSessions] = useState([]); 
 
-  async function addToSessions(props) {
-    // console.log(props)
+  function addToSessions(props) {
+    console.log(props)
     setSessions(session => [...sessions, props])
-    await db.sessions.add(props)
+    db.sessions.add(props)
   }
 
   useEffect(() => {
     console.log(sessions[0])
-    // return () => 
-
-    // {sessions.length > 1 && db.sessions.add({snapshots: sessions[sessions.length-1].snapshots})}
   }, [sessions]) 
 
  
