@@ -14,14 +14,17 @@ function Camera({addImage, shutterEnabled}) {
     let imageURL;
 
     function checkHasCamera() {
-        if (webcamRef.current.stream.active) {
-            setHasCamera(true)
-            return true
+        const reactWebcamHasLoaded = hasCamera !== null
+        if (reactWebcamHasLoaded) {
+            if (webcamRef.current.stream.active) {
+                setHasCamera(true)
+                return true
+            }
+            else {
+                setHasCamera(false)
+                return false
+            } 
         }
-        else {
-            setHasCamera(false)
-            return false
-        } 
     }
     async function grabImage() {
         if (checkHasCamera()) {
