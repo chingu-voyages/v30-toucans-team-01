@@ -5,18 +5,24 @@ function Countdown({seconds, callback, isEnabled, checkHasCamera}) {
     const [count, setCount] = useState(seconds)
     const [started, setStarted] = useState(false)
     const isLatchedRef = useRef(false)
+    const timeoutRef = useRef(null)
 
     useEffect(() => {
-        started && setTimeout(() => {
-            if (count > 1) {
-                setCount(count => count - 1)
-            }
-            else {
-                isLatchedRef.current = false
-                setStarted(false)
-                callback()
-            }
-        }, 1000)
+        if (started) {
+            timeoutRef.current = setTimeout(() => {
+                if (count > 1) {
+                    setCount(count => count - 1)
+                }
+                else {
+                    isLatchedRef.current = false
+                    setStarted(false)
+                    callback()
+                }
+            }, 1000)
+        }
+        return () => {
+            clearTimeout(timeoutRef.current)
+        }
     })
     
     function start() {
