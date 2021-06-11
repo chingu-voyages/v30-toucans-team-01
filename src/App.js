@@ -15,12 +15,36 @@ function App() {
   function addToSessions(props) {
     // console.log(props)
     setSessions(session => [...sessions, props])
+<<<<<<< Updated upstream
+=======
+    db.sessions.add(props)
+    showEstimatedQuota();
+>>>>>>> Stashed changes
   }
 
   useEffect(() => {
     console.log(sessions)
   }, [sessions]) 
 
+<<<<<<< Updated upstream
+=======
+  async function showEstimatedQuota() {
+    if (navigator.storage && navigator.storage.estimate) {
+      const estimation = await navigator.storage.estimate();
+      console.log(`Quota: ${estimation.quota}`);
+      console.log(`Usage: ${estimation.usage}`);
+    } else {
+      console.error("StorageManager not found");
+    }
+  }
+
+  useEffect(async () => {
+    let temp = await db.sessions.toArray();
+    setSessions(temp)
+  },[])
+
+
+>>>>>>> Stashed changes
   return (
     <Router>
       <Switch>
