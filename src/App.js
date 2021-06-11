@@ -20,7 +20,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(sessions[0])
+    console.log(sessions)
   }, [sessions]) 
 
  

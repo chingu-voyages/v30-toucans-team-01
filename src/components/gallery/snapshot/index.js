@@ -10,7 +10,7 @@ function Snapshot({snapshot}) {
 }
 
 function Session({snapshots}) {
-    const date = snapshots[0].timeStamp.getFullYear() + '-' + (snapshots[0].timeStamp.getMonth() + 1) + '-' + snapshots[0].timeStamp.getDate();
+    const date = snapshots[0].createdAt;
     return (
         <div>
             <div className="gallery">
