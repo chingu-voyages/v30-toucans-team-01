@@ -8,15 +8,29 @@ const videoConstraints = {
     height: 720,
     facingMode: 'user'
 }
-function Camera({addImage}) {
+function Camera({addImage, shutterEnabled}) {
     const webcamRef = React.useRef();
     const [hasCamera, setHasCamera] = useState(null)
     let imageURL;
 
+    function checkHasCamera() {
+        const reactWebcamHasLoaded = hasCamera !== null
+        if (reactWebcamHasLoaded) {
+            if (webcamRef.current.stream.active) {
+                setHasCamera(true)
+                return true
+            }
+            else {
+                setHasCamera(false)
+                return false
+            } 
+        }
+    }
     async function grabImage() {
-        setHasCamera(webcamRef.current.stream.active);
-        imageURL = await webcamRef.current.getScreenshot();
-        addImage(imageURL);
+        if (checkHasCamera()) {
+            imageURL = await webcamRef.current.getScreenshot();
+            addImage(imageURL);
+        }
       }
     return (
         <div className="Camera__wrapper">
@@ -36,7 +50,7 @@ function Camera({addImage}) {
                 <div className="Camera" >
                     {(hasCamera || hasCamera === null) && 
                     <>
-                        <Countdown seconds={3} callback={grabImage} />
+                        <Countdown seconds={3} callback={grabImage} isEnabled={shutterEnabled && hasCamera} checkHasCamera={checkHasCamera} />
                         <Webcam
                             className="Camera__webcam"
                             audio={false}
