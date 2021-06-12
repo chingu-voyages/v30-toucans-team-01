@@ -1,27 +1,15 @@
 import React from 'react'
+import './snapshot.css'
 
-function Snapshot({snapshot}) {
+function Snapshot({snapshot, onClick = () => null, className}) {
     return (
-        <div className="gallery__image-container">
-            <img  className ="gallery__image" src={snapshot.imageURL} alt="random photo"/>
-            <span className="gallery__expression">{snapshot.expressionText}</span>
+        <div onClick={onClick} className={`Snapshot ${className || ''}`}>
+            <img className ="Snapshot__image" src={snapshot.imageURL} alt="random photo"/>
+            <svg  className="Snapshot__expression" viewBox="0 0 56 18">
+                <text x="0" y="15">{snapshot.expressionText}</text>
+            </svg>
         </div>
     )
 }
 
-function Session({snapshots}) {
-    const date = snapshots[0].createdAt;
-    return (
-        <div>
-            <div className="gallery">
-                  <div className="gallery__header">{date}</div>
-                  <div className="top__images">
-                        {snapshots.map(snapshot => (
-                           <Snapshot snapshot={snapshot} key={snapshot.id}/>
-                        ))}
-                  </div>    
-            </div>
-        </div>
-    )
-}
-export {Snapshot, Session}
+export default Snapshot
