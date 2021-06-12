@@ -5,14 +5,13 @@ import Menu from '../../components/menu';
 import Gallery from '../../components/gallery';
 import './home.css';
 
-function Home({sessions}) {
-    console.log("Printing session..\n")
+function Home() {  
     return (
         <div className="Home">
             {/* TODO: HOME VIEW */}
             <Header/>
             <Menu/>
-            <Gallery sessions={sessions}/>   
+            <Gallery/>   
             <Footer/>
         </div>
     );

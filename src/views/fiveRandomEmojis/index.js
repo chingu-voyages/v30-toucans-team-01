@@ -3,20 +3,20 @@ import { useHistory } from 'react-router-dom';
 import { emojiList, randomEmojisArray } from '../../services/emoji';
 import Session from '../../services/sessions';
 import Booth from '../booth';
+import db from '../../services/faceitdb.js'
 import './fiveRandomEmojis.css';
 
-function FiveRandomEmojis({addSession}) {
+function FiveRandomEmojis() {
     const [emojis, setEmojis] = useState(randomEmojisArray(5))
     const tempSession = useRef(new Session());
     const history = useHistory();
 
     useEffect(() => {
-        console.count('useEffect')
         const session = tempSession.current
         return () => {
-            session.snapshots.length !== 0 && addSession(session)
+            session.snapshots.length !== 0 && db.sessions.add(session)
         }
-    },[addSession])
+    },[])
 
     useEffect(() => {
         if (tempSession.current.snapshots.length >= 5) {
@@ -29,8 +29,6 @@ function FiveRandomEmojis({addSession}) {
     }
     function addImage(props) {
         tempSession.current.addSnapshot(props, emojis[2]);
-        console.log(tempSession);
-        console.log("addImage Test Passed")
         nextEmoji()
     }
     return (

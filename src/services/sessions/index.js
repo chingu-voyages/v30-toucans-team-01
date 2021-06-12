@@ -4,7 +4,7 @@ import base64ToBlob from '../helpers/base64ToBlob.js'
 
 class Session {
     constructor(id, snapshots) {
-        this.snapshots = snapshots ? snapshots.map(props => new Snapshot(...props)) : []
+        this.snapshots = snapshots ? snapshots.map(({imageData, expressionText, id, timeStamp}) => new Snapshot(imageData, expressionText, id, timeStamp)) : []
         this.id = id || uuidv4()
     }
     async addSnapshot(base64ImageData, expressionText) {
