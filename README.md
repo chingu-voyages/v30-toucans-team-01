@@ -12,6 +12,7 @@ This Project includes:
 - [x] Camera component that lets people pick an emoji to imitate!
 - [x] Gallery view that lets users view their previous selfies.
 - [x] Random Emoji Game!
+- [x] Local persisted storage of sessions
 
 ## Running the project locally
 
@@ -24,6 +25,10 @@ From the repo:
 ## Tech Used
 - HTML, CSS
 - ReactJS
+- [React Router](https://reactrouter.com/)
+- [react-webcam](https://www.npmjs.com/package/react-webcam)
+- [dexie](https://dexie.org/)
+- [prettier](https://prettier.io/)
 
 ## Members 
 - `Lily`
