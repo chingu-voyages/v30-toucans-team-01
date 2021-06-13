@@ -13,7 +13,7 @@ function Home({sessions, storageData}) {
             {/* TODO: HOME VIEW */}
             <Header/>
             <Menu/>
-            <Gallery sessions={sessions}/>   
+            <Gallery/>   
             <Footer/>
             <Progress storageData={storageData}/>
         </div>

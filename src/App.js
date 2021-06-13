@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -51,7 +51,7 @@ function App() {
           <Booth />
         </Route>
         <Route path="/fiverandomemojis">
-          <FiveRandomEmojis addSession={addToSessions}/>
+          <FiveRandomEmojis />
         </Route>
         <Route path="/">
           <Home sessions={sessions} storageData={storage}/>
