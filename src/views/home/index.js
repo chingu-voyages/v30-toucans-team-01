@@ -3,7 +3,7 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Gallery from '../../components/gallery';
-import Progress from '../../components/progress'
+import {HomeModal} from '../../components/modal'
 import './home.css';
 
 function Home({sessions, storageData}) {
@@ -11,11 +11,11 @@ function Home({sessions, storageData}) {
     return (
         <div className="Home">
             {/* TODO: HOME VIEW */}
+            <HomeModal/>
             <Header/>
             <Menu/>
             <Gallery/>   
-            <Footer/>
-            <Progress storageData={storageData}/>
+            <Footer storageData={storageData}/>
         </div>
     );
 }

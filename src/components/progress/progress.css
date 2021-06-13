@@ -18,3 +18,7 @@
     background: linear-gradient(to right, var(--main-color-1), var(--main-color-0));
     border-radius: 20px;
 }
+
+.progress span {
+    font-size: 180%;
+}
