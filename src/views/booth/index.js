@@ -26,7 +26,7 @@ function Booth({ children, className, addImage }) {
     <div className={`Booth ${className || ''}`}>
       {imagePreview && (
         <dialog open className="Booth__image-preview">
-          <img className="image-preview__image" src={imagePreview} alt="Image preview" />
+          <img className="image-preview__image" src={imagePreview} alt="Snapshot preview" />
         </dialog>
       )}
       <Camera addImage={handleAddImage} shutterEnabled={!imagePreview} />
