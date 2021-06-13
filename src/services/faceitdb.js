@@ -1,10 +1,10 @@
-import Dexie from 'dexie';
+import Dexie from 'dexie'
 
-const db = new Dexie('faceitDB');
+const db = new Dexie('faceitDB')
 
 db.version(1).stores({
-    sessions: 'id'
+  sessions: 'id',
 })
-db.open();
+db.open()
 
-export default db;
+export default db
