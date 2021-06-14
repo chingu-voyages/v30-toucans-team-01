@@ -12,26 +12,12 @@ import db from './services/faceitdb'
 
 function App() {
   const [sessions, setSessions] = useState([]); 
-  const [storage, setStorage] = useState({ quota: 0, usage: 0})
   const [isActive, setIsActive] = useState(false);
-
-
-  async function showEstimatedQuota() {
-    if (navigator.storage && navigator.storage.estimate) {
-      const estimation = await navigator.storage.estimate();
-      setStorage({quota: estimation.quota, usage: estimation.usage})
-      console.log(`Quota: ${estimation.quota}`);
-      console.log(`Usage: ${estimation.usage}`);
-    } else {
-      console.error("StorageManager not found");
-    }
-  }
   
   function addToSessions(props) {
     console.log(props)
     setSessions(session => [...sessions, props])
     db.sessions.add(props)
-    showEstimatedQuota();
   }
 
   useEffect(() => {
@@ -56,7 +42,7 @@ function App() {
           <FiveRandomEmojis />
         </Route>
         <Route path="/">
-          <Home sessions={sessions} storageData={storage} activeModal={{isActive, setIsActive}}/>
+          <Home sessions={sessions} activeModal={{isActive, setIsActive}}/>
         </Route>
       </Switch>
     </Router>

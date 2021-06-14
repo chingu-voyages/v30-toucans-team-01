@@ -15,7 +15,7 @@ function Home({ storageData, activeModal }) {
             <Header/>
             <Menu/>
             <Gallery/>   
-            <Footer storageData={storageData}/>
+            <Footer/>
         </div>
     );
 }

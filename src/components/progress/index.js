@@ -2,16 +2,14 @@ import React from 'react'
 import './progress.css';
 
 function Progress({storageData}) {
-    let storage = `${storageData.usage / storageData.quota}`;
-    let progress = '1%';
-    {storage > 1 && (progress = storage + '%')}
+    const percentOfStorageUsed = Math.ceil((storageData.usage / storageData.quota) * 100)+'%';
     return (
         <div className="progress">
             <span>Storage Usage</span>
             <div className="progress-container">
-                <div className="progress-bar-container" style={{width: progress}}>
+                <div className="progress-bar-container" style={{width: percentOfStorageUsed}}>
                 </div>
-                {progress}
+                {percentOfStorageUsed}
             </div>
         </div>
     )
