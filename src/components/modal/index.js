@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import './modal.css'
 function Modal({children}) {
     return (
@@ -15,11 +15,9 @@ function Modal({children}) {
     )
 }
 
-function HomeModal() {
-    const [isActive, setIsActive] = useState(false);
-
+function HomeModal({activeModal}) {   
     return (
-        <div className={`modal__container ${isActive && 'hide__modal'}`}>
+        <div className={`modal__container ${activeModal.isActive && 'hide__modal'}`}>
             <div className="modal">
                 <h1>FaceIt</h1>
                 <p>
@@ -27,7 +25,7 @@ function HomeModal() {
                         to showcase it in the gallery component.<br/>
                         Press 'I Accept' to continue.
                     </p>
-                <button onClick={() => setIsActive(!isActive)}> I Accept</button>
+                <button onClick={() => activeModal.setIsActive(!activeModal.isActive)}> I Accept</button>
             </div>
         </div>
     )

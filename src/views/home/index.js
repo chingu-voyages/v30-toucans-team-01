@@ -6,12 +6,12 @@ import Gallery from '../../components/gallery';
 import {HomeModal} from '../../components/modal'
 import './home.css';
 
-function Home({sessions, storageData}) {
+function Home({ storageData, activeModal }) {
     console.log("Printing session..\n")
     return (
         <div className="Home">
             {/* TODO: HOME VIEW */}
-            <HomeModal/>
+            <HomeModal activeModal={activeModal}/>
             <Header/>
             <Menu/>
             <Gallery/>   

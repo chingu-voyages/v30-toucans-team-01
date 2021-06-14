@@ -13,6 +13,8 @@ import db from './services/faceitdb'
 function App() {
   const [sessions, setSessions] = useState([]); 
   const [storage, setStorage] = useState({ quota: 0, usage: 0})
+  const [isActive, setIsActive] = useState(false);
+
 
   async function showEstimatedQuota() {
     if (navigator.storage && navigator.storage.estimate) {
@@ -54,7 +56,7 @@ function App() {
           <FiveRandomEmojis />
         </Route>
         <Route path="/">
-          <Home sessions={sessions} storageData={storage}/>
+          <Home sessions={sessions} storageData={storage} activeModal={{isActive, setIsActive}}/>
         </Route>
       </Switch>
     </Router>
