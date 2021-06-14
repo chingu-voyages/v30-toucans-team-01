@@ -23,10 +23,11 @@ function HomeModal() {
             <div className="modal">
                 <h1>FaceIt</h1>
                 <p>
-                        'No Camera Found'<br/>
-                        Please Enable your Camera to Take Photos!
+                        This site reads data and stores it in the background<br/>
+                        to showcase it in the gallery component.<br/>
+                        Press 'I Accept' to continue.
                     </p>
-                <button onClick={() => setIsActive(!isActive)}>Accept</button>
+                <button onClick={() => setIsActive(!isActive)}> I Accept</button>
             </div>
         </div>
     )
