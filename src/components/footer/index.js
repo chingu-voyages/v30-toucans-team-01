@@ -22,7 +22,7 @@ function Footer() {
 
     return (
         <div className="Footer">
-            <Progress storageData={storage}/>
+           {storage && <Progress storageData={storage}/>} 
            <a className="Footer__link" href="https://github.com/chingu-voyages/v30-toucans-team-01"> 
                <p className="Footer__text">Chingu Voyages 30 Toucans Team 01</p>
                 <img className="Footer__logo" alt="githubLogo" src={githubLogo}/>
