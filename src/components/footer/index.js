@@ -4,14 +4,12 @@ import Progress from '../progress'
 import './Footer.css'
 
 function Footer() {
-  const [storage, setStorage] = useState({ quota: 0, usage: 0})
+  const [storage, setStorage] = useState(null)
 
     async function showEstimatedQuota() {
         if (navigator.storage && navigator.storage.estimate) {
           const estimation = await navigator.storage.estimate();
           setStorage({quota: estimation.quota, usage: estimation.usage})
-          console.log(`Quota: ${estimation.quota}`);
-          console.log(`Usage: ${estimation.usage}`);
         } else {
           console.error("StorageManager not found");
         }
