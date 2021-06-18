@@ -15,4 +15,18 @@ function Modal({children}) {
     )
 }
 
-export default Modal
+function ModalTwo() {
+    return (
+        <div className="modal__container">
+                <div class="modal">
+                    <h1>FaceIt</h1>
+                    <p>
+                        WARNING!<br/>
+                        The following sessions and pictures might not be saved <br/> in the future due to low disk space!<br/>
+                    </p>
+                    <button>I Understand</button>
+                </div>
+            </div>
+    )
+}
+export {Modal, ModalTwo}

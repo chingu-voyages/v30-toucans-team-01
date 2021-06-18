@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,12 +11,10 @@ import FiveRandomEmojis from './views/fiveRandomEmojis';
 import db from './services/faceitdb'
 
 function App() {
-<<<<<<< Updated upstream
-=======
   const [sessions, setSessions] = useState([]); 
   const [quota, setQuota] = useState(0);
   const [usage, setUsage] = useState(0);
-
+  const [showModal, setModal] = useState(false);
   function addToSessions(props) {
     // console.log(props)
     setSessions(session => [...sessions, props])
@@ -40,13 +38,8 @@ function App() {
     }
   }
 
-  useEffect(async () => {
-    let temp = await db.sessions.toArray();
-    setSessions(temp)
-  },[])
+  
 
-
->>>>>>> Stashed changes
   return (
     <Router>
       <Switch>
