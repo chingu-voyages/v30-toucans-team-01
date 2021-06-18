@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react'
 import './modal.css'
+
 function Modal({children}) {
     return (
             <div className="modal__container">
@@ -15,19 +16,18 @@ function Modal({children}) {
     )
 }
 
-function HomeModal({activeModal}) {   
+function ModalTwo() {
     return (
-        <div className={`modal__container ${activeModal.isActive && 'hide__modal'}`}>
-            <div className="modal">
-                <h1>FaceIt</h1>
-                <p>
-                        This site reads data and stores it in the background<br/>
-                        to showcase it in the gallery component.<br/>
-                        Press 'I Accept' to continue.
+        <div className="modal__container">
+                <div class="modal">
+                    <h1>FaceIt</h1>
+                    <p>
+                        WARNING!<br/>
+                        The following sessions and pictures might not be saved <br/> in the future due to low disk space!<br/>
                     </p>
-                <button onClick={() => activeModal.setIsActive(!activeModal.isActive)}> I Accept</button>
+                    <button>I Understand</button>
+                </div>
             </div>
-        </div>
     )
 }
-export {Modal,HomeModal}
+export {Modal, ModalTwo}

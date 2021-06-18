@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,8 +23,6 @@ function App() {
   useEffect(() => {
     console.log(sessions)
   }, [sessions]) 
-
- 
 
   useEffect(async () => {
     let temp = await db.sessions.toArray();

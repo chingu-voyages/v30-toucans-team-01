@@ -3,7 +3,6 @@ import Webcam from 'react-webcam';
 import Countdown from '../countdown';
 import './camera.css';
 import {Modal} from '../modal'
-
 const videoConstraints = {
     width: 1280,
     height: 720,
