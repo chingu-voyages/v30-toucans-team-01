@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,8 +8,30 @@ import Home from './views/home';
 import "./App.css";
 import Booth from './views/booth';
 import FiveRandomEmojis from './views/fiveRandomEmojis';
+import db from './services/faceitdb'
 
 function App() {
+  const [sessions, setSessions] = useState([]); 
+  const [isActive, setIsActive] = useState(false);
+  
+  function addToSessions(props) {
+    console.log(props)
+    setSessions(session => [...sessions, props])
+    db.sessions.add(props)
+  }
+
+  useEffect(() => {
+    console.log(sessions)
+  }, [sessions]) 
+
+ 
+
+  useEffect(async () => {
+    let temp = await db.sessions.toArray();
+    setSessions(temp)
+  },[])
+
+
   return (
     <Router>
       <Switch>
@@ -20,7 +42,7 @@ function App() {
           <FiveRandomEmojis />
         </Route>
         <Route path="/">
-          <Home />
+          <Home sessions={sessions} activeModal={{isActive, setIsActive}}/>
         </Route>
       </Switch>
     </Router>
