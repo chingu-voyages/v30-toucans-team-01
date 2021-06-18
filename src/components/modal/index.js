@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState, useRef} from 'react'
 import './modal.css'
+
 function Modal({children}) {
     return (
             <div className="modal__container">
-                <div class="modal">
+                <div className="modal">
                     <h1>FaceIt</h1>
                     <p>
                         'No Camera Found'<br/>

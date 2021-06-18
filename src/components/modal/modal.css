@@ -8,6 +8,7 @@
     text-align: center;
     display: grid;
     place-items: center;
+    z-index: 1;
 }
 
 .modal {
@@ -23,4 +24,12 @@
 .modal > h1 {
     letter-spacing: 5px;
     margin: 0px 0px 10px 0;
+}
+
+.modal > h2 {
+    font-size: 2rem;
+}
+
+.hide__modal {
+    display:none;
 }
